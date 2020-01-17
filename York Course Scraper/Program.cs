@@ -12,8 +12,6 @@ namespace York_Course_Scraper
     {
         static void Main(string[] args)
         {
-            //https://apps1.sis.yorku.ca/WebObjects/cdm.woa/Contents/WebServerResources/FW2019[faculty].html
-            var ConnectionSource = @"data source=C:\Users\brady\source\repos\BradyRhora\ForkBot\ForkBot\bin\Debug\Files\YorkDB.db";
             string[] Faculties = { "AP", "ED", "ES", "FA", "GL", "GS", "HH", "LE", "LW", "SB", "SC" };
             HtmlWeb web = new HtmlWeb();
             foreach(var fac in Faculties)
@@ -39,7 +37,7 @@ namespace York_Course_Scraper
                         string loi = rows[i].ChildNodes[5].InnerText;
                         string type = rows[i].ChildNodes[7].InnerText.Replace("&nbsp;", "");
 
-                        using (var con = new SQLiteConnection(ConnectionSource))
+                        using (var con = new SQLiteConnection(Constants.CONNECTION_STRING))
                         {
                             con.Open();
                             var stm = "INSERT INTO COURSES(FACULTY, DEPARTMENT, LEVEL, CODE, CREDIT, TITLE, LANGUAGE, TYPE) " +

@@ -16,7 +16,8 @@ namespace York_Course_Scraper
             HtmlWeb web = new HtmlWeb();
             foreach(var fac in Faculties)
             {
-                string url = $"https://apps1.sis.yorku.ca/WebObjects/cdm.woa/Contents/WebServerResources/FW2019{fac}.html";
+                int year = DateTime.Now.Year;
+                string url = $"https://apps1.sis.yorku.ca/WebObjects/cdm.woa/Contents/WebServerResources/FW{year}{fac}.html";
 
                 Console.Write($"Loading {url}... ");
                 var page = web.Load(url);

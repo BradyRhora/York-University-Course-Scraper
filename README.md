@@ -1,5 +1,7 @@
 # York University Course Scraper
 
+**Note: This program likely no longer works, as the website now requires logging in to view these pages.**
+
 Small program I made to scrape all active courses currently at York University in Toronto, ON, Canada.
 
 Works by opening the webpages containing all currently active courses for a specific faculty then going through the table on that page row by row to get data for each course. It doesn't get extra info like sections or instructors, just basic course info that can be used to sort courses or filter courses. It then inserts each course into a database so that it may be used by my Discord bot, Forkbot, the bot used by the York University discords.
